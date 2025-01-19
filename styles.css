@@ -1,0 +1,99 @@
+/* Genel Stil */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Siyah arka plan */
+    color: white; /* Beyaz yazılar */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #1db954;
+    color: white;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode button {
+    background-color: #007bff;
+}
+
+/* Sol Menü için Stil */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #000;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    padding: 20px;
+    background-color: #1a1a1a;
+    margin: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
+
+.sidebar ul li:hover {
+    background-color: #555;
+}
+
+#menu-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1000;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#toggleMode {
+    background-color: #007bff;
+}

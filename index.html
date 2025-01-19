@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müzik Platformu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Genel Stil */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Siyah arka plan */
+            color: white; /* Beyaz yazılar */
+        }
+
+        /* Sol Menü için Stil */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 300px;
+            background-color: #000; /* Arka plan siyah */
+            color: white; /* Yazılar beyaz */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .sidebar h2 {
+            padding: 20px;
+            background-color: #1a1a1a; /* Başlık arka planı daha açık siyah */
+            margin: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 20px;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #333; /* Menü öğesi koyu gri */
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+        }
+        .sidebar ul li:hover {
+            background-color: #555; /* Hover rengi */
+        }
+        #menu-toggle {
+            position: fixed;
+            left: 10px; /* Butonu sola taşır */
+            top: 10px;
+            z-index: 1000;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* About Me Bölümü */
+        .about-me {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            margin-top: 60px;
+        }
+        .about-me h2 {
+            margin-bottom: 10px;
+        }
+        .about-me p {
+            font-size: 16px;
+        }
+
+        /* Görsel için Stil */
+        .about-me img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Görsel ile metin arasına boşluk */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Müzik Platformu</h1>
+        </header>
+
+        <!-- About Me Bölümü -->
+        <section class="about-me">
+            <!-- Görsel ekleme -->
+           <img src="file:///C:/Users/ALİ%20YİĞİT/Desktop/web%20s/472611889_566631542941628_3297995864476849071_n.jpg" alt="Görsel">
+            <h2>About Me</h2>
+            <p>Hi, my name is Ali Y. I'm a regular high school student like everyone. I love coding if you can see. If you want to reach me, this is my Instagram address: <a href="https://www.instagram.com/ali.yi_kmn/" target="_blank">Instagram</a></p>
+        </section>
+
+        <main>
+            <!-- İçerik buraya gelir -->
+        </main>
+
+        <button id="menu-toggle">Menü</button>
+        <div class="sidebar" id="sidebar">
+            <h2>Albüm Listesi</h2>
+            <ul>
+                <li onclick="navigateToAlbum(1)">Albüm 1</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        // Menü açma/kapatma
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Albüm tıklama yönlendirmesi
+        function navigateToAlbum(albumId) {
+            window.location.href = `album.html?album=${albumId}`;
+        }
+    </script>
+</body>
+</html>
